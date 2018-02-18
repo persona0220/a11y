@@ -1,3 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko"  xml:lang="ko">
+<meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
@@ -58,7 +63,7 @@
       <div class="hello-world">Hello, world!</div>
       <input type="radio" name="option">Hello!
       <input type="radio" name="option">Bye!
-      <div id="close" class="fancy-button">닫기</div>
+      <div id="close" class="fancy-button" tabindex="0">닫기</div>
     </dialog>
     <script>
       let settingButton = document.getElementById('setting');
@@ -73,13 +78,14 @@
       closeButton.addEventListener('keypress', function(e) {
         if (e.keyCode == 13) closeDialog();
       });
-   
-      function openDialog() {
+
+      function openDialog(e) {
         dialog.showModal();
       }
       
       function closeDialog() {
         dialog.close();
+        settingButton.focus();
       }
     </script>
   </body>
